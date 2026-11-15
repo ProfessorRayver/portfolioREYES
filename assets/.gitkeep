@@ -1,0 +1,5 @@
+# Assets Directory
+
+Place your project screenshots and images here.
+Files in this folder can be referenced in index.html like:
+  <img src="assets/your-image.png" alt="..." />

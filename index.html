@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>Rayver S. Reyes — Full-Stack Developer & DevOps | AI/ML Integration</title>
+  <meta name="description" content="Portfolio of Rayver S. Reyes — BSIT 4th Year student at PUP Biñan, full-stack & mobile developer, DevOps engineer, and national hackathon finalist (AWS Innovation Cup Top 10, ASEAN AI Hackathon 46th Place)." />
+  <meta name="keywords" content="Rayver Reyes, Full-Stack Developer, DevOps, API, AI, Machine Learning, Flutter, PUP, BSIT, Portfolio" />
+  <meta name="author" content="Rayver S. Reyes" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Rayver S. Reyes — Full-Stack Developer & DevOps" />
+  <meta property="og:description" content="Building scalable web/mobile apps, automated DevOps pipelines, and AI-powered systems." />
+  <meta property="og:type" content="website" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <!-- Devicon (tech icons) -->
+  <link href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" rel="stylesheet" />
+
+  <!-- Custom Stylesheet (Glacier Blue, Navy & Lemon Palette - Light Mode) -->
+  <link rel="stylesheet" href="css/style.css?v=fixed_hero" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════
+       NAVBAR
+       ═══════════════════════════════════════════════════════ -->
+  <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <div class="container">
+      <a class="navbar-brand navbar-brand-custom" href="#hero">
+        &lt;<span>RSR</span>/&gt;<span class="dot"></span>
+      </a>
+      <button class="navbar-toggler navbar-toggler-custom" type="button"
+        data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link" href="#about" data-section="about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#experience" data-section="experience">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills" data-section="skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#certifications" data-section="certifications">Certificates</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#achievements" data-section="achievements">Achievements</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#education" data-section="education">Education</a>
+          </li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <a class="btn-lemon" href="#contact" style="padding: 0.5rem 1.25rem; font-size: 0.85rem;">
+              <i class="bi bi-chat-dots-fill"></i> Contact Me
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       HERO SECTION
+       ═══════════════════════════════════════════════════════ -->
+  <section id="hero">
+    <!-- Background effects -->
+    <div class="hero-bg-grid"></div>
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <canvas id="particles-canvas"></canvas>
+
+    <div class="container hero-content">
+      <div class="row align-items-center">
+        <div class="col-lg-7 text-center text-lg-start">
+          <div class="hero-badge">
+            <span class="status-dot"></span> Available for IT Internship & Full-Stack Opportunities
+          </div>
+          <h1 class="hero-name">
+            Rayver S.<br/><span class="highlight">Reyes</span>
+          </h1>
+          <p class="hero-title">
+            <span id="typed-title"></span><span class="mono" style="color: var(--color-glacier-deep); font-weight: 700;">|</span>
+          </p>
+          <p class="hero-description text-justified">
+            BSIT student at the Polytechnic University of the Philippines – Biñan Campus with end-to-end expertise across full-stack web/mobile development, backend API design, and DevOps environment provisioning. National Hackathon Finalist and multiple-time champion turning complex data into intuitive, high-performance systems.
+          </p>
+          <div class="hero-cta justify-content-center justify-content-lg-start">
+            <a href="#experience" class="btn-navy">
+              <i class="bi bi-briefcase-fill"></i> View Experience
+            </a>
+            <a href="#certifications" class="btn-lemon">
+              <i class="bi bi-patch-check-fill"></i> View Certificates
+            </a>
+            <a href="#contact" class="btn-outline-glacier">
+              <i class="bi bi-send-fill"></i> Hire Me
+            </a>
+          </div>
+
+          <div class="hero-tags justify-content-center justify-content-lg-start">
+            <span class="hero-tag"><i class="bi bi-geo-alt-fill"></i> Biñan, Laguna</span>
+            <span class="hero-tag"><i class="bi bi-award-fill"></i> AWS Top 10 Finalist</span>
+            <span class="hero-tag"><i class="bi bi-globe"></i> ASEAN AI Finalist (46th)</span>
+            <span class="hero-tag"><i class="bi bi-mortarboard-fill"></i> President's Lister</span>
+          </div>
+        </div>
+
+        <div class="col-lg-5 mt-5 mt-lg-0">
+          <div class="glass-card hero-profile-card">
+            <div class="hero-avatar-wrap">
+              <img src="assets/picture.jpg?v=20261115" alt="Rayver S. Reyes" class="hero-avatar-img">
+              <div class="hero-avatar-badge" title="Certified Scrum & DevOps">
+                <i class="bi bi-shield-check"></i>
+              </div>
+            </div>
+            <h3 style="font-size: 1.5rem; font-weight: 900; color: var(--color-navy); margin-bottom: 0.25rem;">Rayver S. Reyes</h3>
+            <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.88rem; color: var(--color-glacier-deep); font-weight: 700; margin-bottom: 1.25rem;">
+              Full-Stack & DevOps Specialist
+            </p>
+            <div style="display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap;">
+              <span class="tech-tag lemon-tag">Scrum Certified</span>
+              <span class="tech-tag">Postman Expert</span>
+              <span class="tech-tag">Flutter Mobile</span>
+              <span class="tech-tag">Netlify</span>
+              <span class="tech-tag">AWS Cloud</span>
+            </div>
+            <div class="mt-4 pt-3" style="border-top: 1px solid var(--border-light); display: flex; justify-content: space-around;">
+              <div class="hero-stat-box">
+                <div class="hero-stat-number" style="color: var(--color-navy);">2x</div>
+                <div class="hero-stat-label">QUIZ CHAMPION</div>
+              </div>
+              <div style="border-right: 1px solid var(--border-light);"></div>
+              <div class="hero-stat-box">
+                <div class="hero-stat-number" style="color: var(--color-glacier-deep);">Top 10</div>
+                <div class="hero-stat-label">AWS NATIONAL</div>
+              </div>
+              <div style="border-right: 1px solid var(--border-light);"></div>
+              <div class="hero-stat-box">
+                <div class="hero-stat-number" style="color: var(--color-navy);">11+</div>
+                <div class="hero-stat-label">CERTIFICATIONS</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="hero-scroll-indicator">
+      <span class="scroll-arrow"></span>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       ABOUT SECTION
+       ═══════════════════════════════════════════════════════ -->
+  <section id="about" class="section-padding">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label"><i class="bi bi-person-badge-fill"></i> About Me</span>
+        <h2 class="section-title">Engineering Reliable, <span class="gradient-text">Intelligent Systems</span></h2>
+        <p class="section-subtitle">Dedicated Information Technology student with practical, end-to-end delivery experience across full-stack development, cloud DevOps, and machine learning pipelines.</p>
+      </div>
+
+      <div class="row justify-content-center align-items-center">
+        <div class="col-lg-10 reveal">
+          <div class="glass-card about-card-wrap">
+            <div class="about-text">
+              <p class="lead-text text-justified">
+                Dedicated and results-driven Information Technology student with practical, end-to-end experience in <strong>full-stack web/mobile development</strong>, <strong>backend API design</strong>, and <strong>DevOps environment provisioning</strong>.
+              </p>
+              <p class="text-justified">
+                I combine agile software delivery (<strong>Certified Scrum Fundamentals</strong> and <strong>Scrum for Operations & DevOps</strong>) with a proven track record in national and international hackathons — including finishing as an <strong>AWS Innovation National Finalist (Top 10)</strong> and placing <strong>46th internationally in the ASEAN AI Hackathon</strong>.
+              </p>
+              <p class="text-justified">
+                Adept at building scalable applications, managing deployment pipelines, deploying modern web applications on Netlify, streamlining databases (PostgreSQL, MySQL), and collaborating in fast-paced cross-functional teams. Eager to bring technical execution, rigorous problem-solving, and a proactive mindset as an <strong>IT Intern in a professional setting</strong>.
+              </p>
+
+              <div class="about-highlights">
+                <div class="about-highlight-item">
+                  <span class="highlight-icon"><i class="bi bi-code-slash"></i></span>
+                  <div class="highlight-label">Core Focus</div>
+                  <div class="highlight-value">Full-Stack & Mobile</div>
+                </div>
+                <div class="about-highlight-item">
+                  <span class="highlight-icon"><i class="bi bi-clouds-fill"></i></span>
+                  <div class="highlight-label">DevOps & Cloud</div>
+                  <div class="highlight-value">CI/CD & Environments</div>
+                </div>
+                <div class="about-highlight-item">
+                  <span class="highlight-icon"><i class="bi bi-cpu-fill"></i></span>
+                  <div class="highlight-label">Specialty</div>
+                  <div class="highlight-value">API & AI/ML Workflows</div>
+                </div>
+                <div class="about-highlight-item">
+                  <span class="highlight-icon"><i class="bi bi-trophy-fill"></i></span>
+                  <div class="highlight-label">Track Record</div>
+                  <div class="highlight-value">Hackathons & Quiz Bee</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       EXPERIENCE & NOTABLE PROJECTS SECTION
+       ═══════════════════════════════════════════════════════ -->
+  <section id="experience" class="section-padding bg-light-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label"><i class="bi bi-briefcase-fill"></i> Experience & Projects</span>
+        <h2 class="section-title">Real-World <span class="gradient-text">Impact & Deliverables</span></h2>
+        <p class="section-subtitle">A showcase of production systems, competitive hackathon builds, and DevOps deployments.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+
+          <!-- 1. PAPEL -->
+          <div class="glass-card experience-card featured reveal">
+            <div class="experience-header">
+              <div>
+                <h3 class="experience-title">PAPEL <span class="company">— Digitalization of Research Repository and Archiving</span></h3>
+                <div class="experience-role">
+                  <i class="bi bi-laptop"></i> Full-Stack Developer & Project Manager | PUP Biñan
+                </div>
+              </div>
+              <span class="experience-date">Flagship Project</span>
+            </div>
+            <ul class="experience-list">
+              <li>Architected and developed end-to-end frontend and backend features for a cloud-based, AI-enhanced research repository system tailored for academic institutions and student researchers.</li>
+              <li>Streamlined database integration, submission/review workflow routing, rigorous QA testing, and comprehensive technical documentation.</li>
+              <li>Engineered secure role-based access for students, advisers, and review panels with automated document parsing and validation.</li>
+            </ul>
+            <div class="experience-tech">
+              <span class="tech-tag lemon-tag">AI Integration</span>
+              <span class="tech-tag">PHP</span>
+              <span class="tech-tag">Netlify</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">QA Tracking</span>
+              <span class="tech-tag">Agile Delivery</span>
+            </div>
+          </div>
+
+          <!-- 2. VaxTrack -->
+          <div class="glass-card experience-card reveal">
+            <div class="experience-header">
+              <div>
+                <h3 class="experience-title">VaxTrack <span class="company">— 3MGS Pharma Inc.</span></h3>
+                <div class="experience-role">
+                  <i class="bi bi-hdd-network"></i> DevOps Engineer
+                </div>
+              </div>
+              <span class="experience-date">August – November 2026</span>
+            </div>
+            <ul class="experience-list">
+              <li>Configured and managed development and deployment environments, establishing robust version control and reliable application release cycles.</li>
+              <li>Monitored system stability, proactively investigating and resolving environment, configuration, and deployment anomalies across cloud infrastructure.</li>
+              <li>Implemented automated CI/CD workflows reducing integration friction and ensuring reproducible, secure builds across environments.</li>
+            </ul>
+            <div class="experience-tech">
+              <span class="tech-tag lemon-tag">DevOps</span>
+              <span class="tech-tag">CI/CD Workflows</span>
+              <span class="tech-tag">Version Control</span>
+              <span class="tech-tag">Environment Provisioning</span>
+              <span class="tech-tag">System Monitoring</span>
+              <span class="tech-tag">Release Management</span>
+            </div>
+          </div>
+
+          <!-- 3. InterVueAI -->
+          <div class="glass-card experience-card reveal">
+            <div class="experience-header">
+              <div>
+                <h3 class="experience-title">InterVueAI <span class="company">— AWS Innovation National Hackathon</span></h3>
+                <div class="experience-role">
+                  <i class="bi bi-cpu"></i> AI Engineer & Backend Developer | Team FRIZZ
+                </div>
+              </div>
+              <span class="experience-date">2025 • Top 10 National Finalist</span>
+            </div>
+            <ul class="experience-list">
+              <li>Engineered scalable backend functionality and core APIs while seamlessly integrating machine learning workflows into the application.</li>
+              <li>Troubleshot backend performance and latency under strict 48-hour time constraints, securing a <strong>Top 10 National Finalist</strong> finish in the AWS Innovation Cup.</li>
+              <li>Collaborated with team FRIZZ to design cloud architecture and live model inference pipelines at AWS Headquarters Philippines.</li>
+            </ul>
+            <div class="experience-tech">
+              <span class="tech-tag lemon-tag">AWS Cloud</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Machine Learning</span>
+              <span class="tech-tag">RESTful APIs</span>
+              <span class="tech-tag">Team Collaboration</span>
+              <span class="tech-tag">National Finalist</span>
+            </div>
+          </div>
+
+          <!-- 4. AlzAware AI -->
+          <div class="glass-card experience-card reveal">
+            <div class="experience-header">
+              <div>
+                <h3 class="experience-title">AlzAware AI <span class="company">— ASEAN AI International Hackathon</span></h3>
+                <div class="experience-role">
+                  <i class="bi bi-kanban"></i> Project Manager | Passage to ASEAN & ASEAN AI Council
+                </div>
+              </div>
+              <span class="experience-date">2026 • 46th Place International</span>
+            </div>
+            <ul class="experience-list">
+              <li>Directed sprint task distribution, milestone tracking, and cross-functional team synchronization under rigorous international hackathon deadlines.</li>
+              <li>Coordinated pitch presentations, technical deliverables, and product architecture, achieving <strong>46th Place internationally</strong> across Southeast Asian participants.</li>
+              <li>Applied human-centric AI problem-solving strategies for healthcare screening support and regional accessibility.</li>
+            </ul>
+            <div class="experience-tech">
+              <span class="tech-tag lemon-tag">Project Management</span>
+              <span class="tech-tag">Agile/Scrum</span>
+              <span class="tech-tag">AI Strategy</span>
+              <span class="tech-tag">Milestone Tracking</span>
+              <span class="tech-tag">International Stage</span>
+            </div>
+          </div>
+
+          <!-- 5. Kenopy -->
+          <div class="glass-card experience-card reveal">
+            <div class="experience-header">
+              <div>
+                <h3 class="experience-title">Kenopy <span class="company">— AI-Powered Mobile Note-Taking</span></h3>
+                <div class="experience-role">
+                  <i class="bi bi-phone"></i> Full-Stack Developer
+                </div>
+              </div>
+              <span class="experience-date">2026 • Mobile App</span>
+            </div>
+            <ul class="experience-list">
+              <li>Built an AI-powered note-taking mobile application featuring responsive, intuitive UI design and concept-graph visualizations.</li>
+              <li>Integrated secure cloud storage and intelligent information retrieval workflows for student and professional note management.</li>
+              <li>Implemented smooth cross-platform experiences using Flutter, Dart, and modern state management patterns.</li>
+            </ul>
+            <div class="experience-tech">
+              <span class="tech-tag lemon-tag">Flutter</span>
+              <span class="tech-tag">Dart</span>
+              <span class="tech-tag">Cloud Storage</span>
+              <span class="tech-tag">Intelligent Retrieval</span>
+              <span class="tech-tag">Mobile UI/UX</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       SKILLS SECTION
+       ═══════════════════════════════════════════════════════ -->
+  <section id="skills" class="section-padding">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label"><i class="bi bi-tools"></i> Technical Skills</span>
+        <h2 class="section-title">Proficiencies & <span class="gradient-text">Toolsets</span></h2>
+        <p class="section-subtitle">Verified skillsets across software development, cloud operations, and project delivery methodologies.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+
+          <!-- Languages & Cores -->
+          <div class="skills-category reveal">
+            <h3 class="skills-category-title"><i class="bi bi-braces"></i> Languages & Cores</h3>
+            <div class="skills-grid">
+              <div class="skill-badge"><i class="devicon-java-plain"></i> Java</div>
+              <div class="skill-badge"><i class="devicon-python-plain"></i> Python</div>
+              <div class="skill-badge"><i class="devicon-php-plain"></i> PHP</div>
+              <div class="skill-badge"><i class="devicon-javascript-plain"></i> JavaScript</div>
+              <div class="skill-badge"><i class="devicon-html5-plain"></i> HTML5</div>
+              <div class="skill-badge"><i class="devicon-css3-plain"></i> CSS3</div>
+            </div>
+          </div>
+
+          <!-- Frameworks & Mobile -->
+          <div class="skills-category reveal">
+            <h3 class="skills-category-title"><i class="bi bi-phone"></i> Frameworks & Mobile Architecture</h3>
+            <div class="skills-grid">
+              <div class="skill-badge focus-badge"><i class="devicon-flutter-plain"></i> Flutter Mobile</div>
+              <div class="skill-badge focus-badge"><i class="bi bi-layers-fill"></i> Full-Stack Architecture</div>
+              <div class="skill-badge"><i class="devicon-bootstrap-plain"></i> Bootstrap 5</div>
+            </div>
+          </div>
+
+          <!-- Databases & Cloud -->
+          <div class="skills-category reveal">
+            <h3 class="skills-category-title"><i class="bi bi-database"></i> Databases & Cloud Platforms</h3>
+            <div class="skills-grid">
+              <div class="skill-badge focus-badge"><i class="bi bi-globe2"></i> Netlify Cloud</div>
+              <div class="skill-badge focus-badge"><i class="devicon-postgresql-plain"></i> PostgreSQL</div>
+              <div class="skill-badge"><i class="devicon-mysql-plain"></i> MySQL</div>
+              <div class="skill-badge focus-badge"><i class="bi bi-cloud-arrow-up-fill"></i> RESTful API Integration</div>
+              <div class="skill-badge"><i class="devicon-amazonwebservices-plain"></i> AWS Cloud Environments</div>
+            </div>
+          </div>
+
+          <!-- DevOps & Tools -->
+          <div class="skills-category reveal">
+            <h3 class="skills-category-title"><i class="bi bi-gear-wide-connected"></i> DevOps & Development Tools</h3>
+            <div class="skills-grid">
+              <div class="skill-badge focus-badge"><i class="devicon-git-plain"></i> Git & Version Control</div>
+              <div class="skill-badge"><i class="devicon-github-original"></i> GitHub</div>
+              <div class="skill-badge focus-badge"><i class="bi bi-arrow-repeat"></i> CI/CD Workflows</div>
+              <div class="skill-badge focus-badge"><i class="devicon-postman-plain"></i> Postman (Student Expert)</div>
+              <div class="skill-badge"><i class="devicon-trello-plain"></i> Trello</div>
+              <div class="skill-badge"><i class="devicon-jira-plain"></i> Jira</div>
+              <div class="skill-badge"><i class="devicon-figma-plain"></i> Figma (UI/UX)</div>
+            </div>
+          </div>
+
+          <!-- Methodologies & Focus Areas -->
+          <div class="skills-category reveal">
+            <h3 class="skills-category-title"><i class="bi bi-stars"></i> Methodologies & Specialized Focus</h3>
+            <div class="skills-grid">
+              <div class="skill-badge focus-badge"><i class="bi bi-check-circle-fill"></i> Agile / Scrum (Certified)</div>
+              <div class="skill-badge focus-badge"><i class="bi bi-plug-fill"></i> REST API Design & Integration</div>
+              <div class="skill-badge focus-badge"><i class="bi bi-robot"></i> AI Feature Implementation</div>
+              <div class="skill-badge focus-badge"><i class="bi bi-graph-up-arrow"></i> Applied Machine Learning</div>
+              <div class="skill-badge"><i class="bi bi-file-earmark-text-fill"></i> Technical Documentation</div>
+              <div class="skill-badge"><i class="bi bi-bug-fill"></i> QA Testing & Traceability</div>
+              <div class="skill-badge"><i class="bi bi-kanban"></i> Project Management</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       CERTIFICATES SHOWCASE (WITH REAL IMAGES & MODAL)
+       ═══════════════════════════════════════════════════════ -->
+  <section id="certifications" class="section-padding bg-light-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label"><i class="bi bi-patch-check-fill"></i> Verified Credentials</span>
+        <h2 class="section-title">Certificates & <span class="gradient-text">Recognitions</span></h2>
+        <p class="section-subtitle">Click any certificate card to preview the full official credential and accreditation.</p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+
+        <!-- 1. ASEAN AI Hackathon 2026 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="glass-card cert-card" onclick="openCertModal('assets/certificates/image1.png', 'ASEAN AI Hackathon 2026 — Certificate of Participation', 'Passage to ASEAN (P2A) and ASEAN AI Council • Cert #P2A2026AI0430')">
+            <div class="cert-thumb-wrap">
+              <img src="assets/certificates/image1.png" alt="ASEAN AI Hackathon 2026" class="cert-thumb" loading="lazy">
+              <div class="cert-overlay">
+                <span><i class="bi bi-zoom-in"></i> View Certificate</span>
+              </div>
+            </div>
+            <div class="cert-body">
+              <div class="cert-issuer">Passage to ASEAN (P2A)</div>
+              <h4 class="cert-title">ASEAN AI Hackathon 2026</h4>
+              <div class="cert-date"><i class="bi bi-calendar3"></i> June 6, 2026 • International</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. ASEAN AI Hackathon Workshop 1 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="glass-card cert-card" onclick="openCertModal('assets/certificates/image2.jpeg', 'Human-Centric AI and Regional Problem Solving', 'ASEAN AI Hackathon 2026: Workshop 1 • Mapúa MCL Global Classroom')">
+            <div class="cert-thumb-wrap">
+              <img src="assets/certificates/image2.jpeg" alt="ASEAN AI Workshop 1" class="cert-thumb" loading="lazy">
+              <div class="cert-overlay">
+                <span><i class="bi bi-zoom-in"></i> View Certificate</span>
+              </div>
+            </div>
+            <div class="cert-body">
+              <div class="cert-issuer">Mapúa MCL & P2A</div>
+              <h4 class="cert-title">Human-Centric AI & Regional Problem Solving</h4>
+              <div class="cert-date"><i class="bi bi-calendar3"></i> April 23, 2026 • Workshop 1</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. AWS Innovation Cup 2025 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="glass-card cert-card" onclick="openCertModal('assets/certificates/image4.png', 'AWS Innovation Cup 2025 — National Finalist', 'AWS Cloud Clubs Philippines • Team FRIZZ • Century Pacific Tower, AWS HQ')">
+            <div class="cert-thumb-wrap">
+              <img src="assets/certificates/image4.png" alt="AWS Innovation Cup 2025" class="cert-thumb" loading="lazy">
+              <div class="cert-overlay">
+                <span><i class="bi bi-zoom-in"></i> View Certificate</span>
+              </div>
+            </div>
+            <div class="cert-body">
+              <div class="cert-issuer">AWS Cloud Clubs Philippines</div>
+              <h4 class="cert-title">AWS Innovation Cup 2025 — Team FRIZZ</h4>
+              <div class="cert-date"><i class="bi bi-trophy-fill" style="color: var(--color-navy);"></i> Top 10 National Finalist • Nov 2025</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. SiKAPTala 2026 Leaderboard Rank 7 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="glass-card cert-card" onclick="openCertModal('assets/certificates/image6.jpeg', 'SiKAPTala 2026 National Leaderboard — Rank #7', 'National CS & IT Competition • Score: 78/95 • DLSU-D CICS {SG} & DEVCON Laguna')">
+            <div class="cert-thumb-wrap">
+              <img src="assets/certificates/image6.jpeg" alt="SiKAPTala 2026 Rank 7" class="cert-thumb" loading="lazy">
+              <div class="cert-overlay">
+                <span><i class="bi bi-zoom-in"></i> View Certificate</span>
+              </div>
+            </div>
+            <div class="cert-body">
+              <div class="cert-issuer">DLSU-D CICS & DEVCON Laguna</div>
+              <h4 class="cert-title">SiKAPTala 2026: CS & IT Quiz Bee (Rank #7)</h4>
+              <div class="cert-date"><i class="bi bi-award-fill" style="color: var(--color-glacier-deep);"></i> National Top 7 • May 2026</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. SiKAPTala 2026 Certificate -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="glass-card cert-card" onclick="openCertModal('assets/certificates/image5.png', 'SiKAPTala 2026: National CS & IT Competition', 'De La Salle University - Dasmariñas • College of Information and Computer Studies')">
+            <div class="cert-thumb-wrap">
+              <img src="assets/certificates/image5.png" alt="SiKAPTala 2026 Certificate" class="cert-thumb" loading="lazy">
+              <div class="cert-overlay">
+                <span><i class="bi bi-zoom-in"></i> View Certificate</span>
+              </div>
+            </div>
+            <div class="cert-body">
+              <div class="cert-issuer">DLSU-D CICS Student Government</div>
+              <h4 class="cert-title">SiKAPTala 2026: National CS & IT Competition</h4>
+              <div class="cert-date"><i class="bi bi-calendar3"></i> May 31, 2026 • National Level</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Postman Student Expert -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="glass-card cert-card" onclick="openCertModal('assets/certificates/image9.png', 'Postman API Fundamentals Student Expert', 'Postman Academy • REST API Design, Testing & Documentation')">
+            <div class="cert-thumb-wrap">
+              <img src="assets/certificates/image9.png" alt="Postman API Fundamentals Student Expert" class="cert-thumb" loading="lazy">
+              <div class="cert-overlay">
+                <span><i class="bi bi-zoom-in"></i> View Certificate</span>
+              </div>
+            </div>
+            <div class="cert-body">
+              <div class="cert-issuer">Postman</div>
+              <h4 class="cert-title">Postman API Fundamentals Student Expert</h4>
+              <div class="cert-date"><i class="bi bi-patch-check-fill" style="color: var(--color-glacier-deep);"></i> June 8, 2025 • Verified Credential</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Introduction to Flutter -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="glass-card cert-card" onclick="openCertModal('assets/certificates/image8.jpg', 'Introduction to Flutter Course', 'Simplilearn / SkillUp • Mobile App Development • Cert Code: 9980562')">
+            <div class="cert-thumb-wrap">
+              <img src="assets/certificates/image8.jpg" alt="Introduction to Flutter" class="cert-thumb" loading="lazy">
+              <div class="cert-overlay">
+                <span><i class="bi bi-zoom-in"></i> View Certificate</span>
+              </div>
+            </div>
+            <div class="cert-body">
+              <div class="cert-issuer">Simplilearn / SkillUp</div>
+              <h4 class="cert-title">Introduction to Flutter Mobile Course</h4>
+              <div class="cert-date"><i class="bi bi-calendar3"></i> March 19, 2026 • Cert #9980562</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. PUP Biñan Champion: Techno Trivia 2024 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="glass-card cert-card" onclick="openCertModal('assets/certificates/image10.png', 'Techno Trivia: An ICT Quiz Bee — CHAMPION', 'Polytechnic University of the Philippines - Biñan Campus • 15th Founding Anniversary (PUPBC@15)')">
+            <div class="cert-thumb-wrap">
+              <img src="assets/certificates/image10.png" alt="Techno Trivia Champion" class="cert-thumb" loading="lazy">
+              <div class="cert-overlay">
+                <span><i class="bi bi-zoom-in"></i> View Certificate</span>
+              </div>
+            </div>
+            <div class="cert-body">
+              <div class="cert-issuer">PUP Biñan Campus</div>
+              <h4 class="cert-title">Champion: Techno Trivia ICT Quiz Bee</h4>
+              <div class="cert-date"><i class="bi bi-trophy-fill" style="color: var(--color-navy);"></i> Champion • September 21, 2024</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. PUP Biñan Champion: TUMPAK 2025 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="glass-card cert-card" onclick="openCertModal('assets/certificates/image11.png', 'TUMPAK: PUP Biñan Ultimate Quiz Showdown — CHAMPION', 'PAMUKAD 25 • Central Student Council & Office of Vice President for Campuses')">
+            <div class="cert-thumb-wrap">
+              <img src="assets/certificates/image11.png" alt="TUMPAK Champion" class="cert-thumb" loading="lazy">
+              <div class="cert-overlay">
+                <span><i class="bi bi-zoom-in"></i> View Certificate</span>
+              </div>
+            </div>
+            <div class="cert-body">
+              <div class="cert-issuer">PUP Biñan Campus</div>
+              <h4 class="cert-title">Champion: TUMPAK Ultimate Quiz Showdown</h4>
+              <div class="cert-date"><i class="bi bi-trophy-fill" style="color: var(--color-navy);"></i> Champion • September 16, 2025</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10. SiKAPTala 2025 Participation -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="glass-card cert-card" onclick="openCertModal('assets/certificates/image7.png', 'SiKAPTala 2025: Collegiate Quiz Bee Finalist', 'De La Salle University - Dasmariñas • College of Information and Computer Studies')">
+            <div class="cert-thumb-wrap">
+              <img src="assets/certificates/image7.png" alt="SiKAPTala 2025 Certificate" class="cert-thumb" loading="lazy">
+              <div class="cert-overlay">
+                <span><i class="bi bi-zoom-in"></i> View Certificate</span>
+              </div>
+            </div>
+            <div class="cert-body">
+              <div class="cert-issuer">DLSU-D CICS Student Government</div>
+              <h4 class="cert-title">SiKAPTala 2025: Collegiate Quiz Bee</h4>
+              <div class="cert-date"><i class="bi bi-calendar3"></i> March 31, 2025 • Top 11 Finalist</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11. Scrum Certified -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="glass-card cert-card" style="padding: 2rem 1.5rem; justify-content: center; text-align: center; border-color: var(--color-lemon); background: #FFFDEB;">
+            <div style="font-size: 3rem; color: var(--color-navy); margin-bottom: 0.5rem;">
+              <i class="bi bi-shield-shaded"></i>
+            </div>
+            <div class="cert-issuer">Scrum Study Accreditation</div>
+            <h4 class="cert-title" style="margin-top: 0.25rem;">Scrum Fundamentals & DevOps Operations</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1.25rem; line-height: 1.6;">
+              Certified in Agile software delivery cycles, sprint task distribution, and DevOps automation workflows.
+            </p>
+            <div class="cert-date"><i class="bi bi-check-circle-fill" style="color: #10B981;"></i> August 2026 • Certified</div>
+          </div>
+        </div>
+
+        <!-- 12. AWS Innovation Cup Team Graphic -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="glass-card cert-card" onclick="openCertModal('assets/certificates/image3.png', 'AWS Innovation Cup 2025 — Team FRIZZ Official Poster', 'AWS Cloud Club Philippines • Team Members: Rayver S. Reyes, Rianne Magtuba, Arby Barnuevo, John Lexter Reyes')">
+            <div class="cert-thumb-wrap">
+              <img src="assets/certificates/image3.png" alt="AWS Innovation Cup Team FRIZZ" class="cert-thumb" loading="lazy">
+              <div class="cert-overlay">
+                <span><i class="bi bi-zoom-in"></i> View Certificate</span>
+              </div>
+            </div>
+            <div class="cert-body">
+              <div class="cert-issuer">AWS Cloud Clubs Philippines</div>
+              <h4 class="cert-title">Team FRIZZ — Official Hackathon Roster</h4>
+              <div class="cert-date"><i class="bi bi-people-fill"></i> Nationwide Hackathon Finalist</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       ACHIEVEMENTS SECTION
+       ═══════════════════════════════════════════════════════ -->
+  <section id="achievements" class="section-padding">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label"><i class="bi bi-trophy-fill"></i> Competitions & Awards</span>
+        <h2 class="section-title">Hackathons & <span class="gradient-text">Accolades</span></h2>
+        <p class="section-subtitle">Consistent podium finishes, competitive programming, and academic recognitions.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="achievement-timeline">
+
+            <!-- 2026 -->
+            <div class="achievement-item glass-card gold reveal">
+              <div class="achievement-year">2026</div>
+              <div class="achievement-title">
+                University Week General Quiz Bee
+                <span class="achievement-badge badge-gold"><i class="bi bi-trophy-fill"></i> Back-to-Back Champion</span>
+              </div>
+              <div class="achievement-detail">Polytechnic University of the Philippines – Biñan Campus • Retained 1st Place title.</div>
+            </div>
+
+            <div class="achievement-item glass-card glacier reveal">
+              <div class="achievement-year">2026</div>
+              <div class="achievement-title">
+                SIKAPTala: National CS & IT Quiz Bee
+                <span class="achievement-badge badge-rank"><i class="bi bi-award-fill"></i> National Top 7</span>
+              </div>
+              <div class="achievement-detail">Organized by DLSU-D CICS {SG} & DEVCON Laguna • Scored 78/95 competing against top universities nationwide.</div>
+            </div>
+
+            <div class="achievement-item glass-card glacier reveal">
+              <div class="achievement-year">2026</div>
+              <div class="achievement-title">
+                ASEAN AI International Hackathon
+                <span class="achievement-badge badge-rank"><i class="bi bi-globe"></i> Ranked 46th International</span>
+              </div>
+              <div class="achievement-detail">Passage to ASEAN (P2A) & ASEAN AI Council • International competition with regional participants.</div>
+            </div>
+
+            <div class="achievement-item glass-card reveal">
+              <div class="achievement-year">2023 – Present</div>
+              <div class="achievement-title">
+                Consistent President's Lister (Academic Honor Roll)
+                <span class="achievement-badge badge-academic"><i class="bi bi-mortarboard-fill"></i> Academic Excellence</span>
+              </div>
+              <div class="achievement-detail">Polytechnic University of the Philippines – Biñan Campus • Maintained highest academic honors.</div>
+            </div>
+
+            <!-- 2025 -->
+            <div class="achievement-item glass-card gold reveal">
+              <div class="achievement-year">2025</div>
+              <div class="achievement-title">
+                Amazon Web Services (AWS) Innovation National Hackathon
+                <span class="achievement-badge badge-gold"><i class="bi bi-trophy-fill"></i> Top 10 National Finalist</span>
+              </div>
+              <div class="achievement-detail">AWS Headquarters Philippines • Team FRIZZ • Engineered InterVueAI under 48h pressure.</div>
+            </div>
+
+            <div class="achievement-item glass-card gold reveal">
+              <div class="achievement-year">2025</div>
+              <div class="achievement-title">
+                TUMPAK: PUP Biñan Ultimate Quiz Showdown (PAMUKAD '25)
+                <span class="achievement-badge badge-gold"><i class="bi bi-trophy-fill"></i> Champion</span>
+              </div>
+              <div class="achievement-detail">Office of the Vice President for Campuses • University-wide academic quiz competition.</div>
+            </div>
+
+            <div class="achievement-item glass-card glacier reveal">
+              <div class="achievement-year">2025</div>
+              <div class="achievement-title">
+                SIKAPTala: National CS & IT Collegiate Quiz Bee
+                <span class="achievement-badge badge-rank"><i class="bi bi-award-fill"></i> Top 11 Finalist</span>
+              </div>
+              <div class="achievement-detail">De La Salle University - Dasmariñas • Back-to-back national finalist in computer science.</div>
+            </div>
+
+            <div class="achievement-item glass-card gold reveal">
+              <div class="achievement-year">2025</div>
+              <div class="achievement-title">
+                University Week General Quiz Bee
+                <span class="achievement-badge badge-gold"><i class="bi bi-trophy-fill"></i> Champion</span>
+              </div>
+              <div class="achievement-detail">Polytechnic University of the Philippines – Biñan Campus.</div>
+            </div>
+
+            <!-- 2024 -->
+            <div class="achievement-item glass-card gold reveal">
+              <div class="achievement-year">2024</div>
+              <div class="achievement-title">
+                Techno Trivia: An ICT Quiz Bee (PUPBC@15)
+                <span class="achievement-badge badge-gold"><i class="bi bi-trophy-fill"></i> Champion</span>
+              </div>
+              <div class="achievement-detail">15th Founding Anniversary Academic Competition • PUP Biñan Campus.</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       EDUCATION & LEADERSHIP SECTION
+       ═══════════════════════════════════════════════════════ -->
+  <section id="education" class="section-padding bg-light-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label"><i class="bi bi-mortarboard-fill"></i> Journey & Leadership</span>
+        <h2 class="section-title">Education & <span class="gradient-text">Leadership</span></h2>
+        <p class="section-subtitle">Academic foundations, community contributions, and institutional leadership roles.</p>
+      </div>
+
+      <div class="row justify-content-center g-4">
+        <!-- Education column -->
+        <div class="col-lg-6 reveal">
+          <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--color-navy); margin-bottom: 1.75rem; font-family: 'JetBrains Mono', monospace; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="bi bi-book-half" style="color: var(--color-glacier-deep);"></i> Academic Background
+          </h3>
+
+          <div class="glass-card education-item">
+            <div class="education-period">2023 – 2027 (Expected) • 4th Year</div>
+            <h4 class="education-degree">Bachelor of Science in Information Technology</h4>
+            <p class="education-school">Polytechnic University of the Philippines – Biñan Campus</p>
+            <p class="education-location"><i class="bi bi-geo-alt-fill"></i> Biñan, Laguna</p>
+            <div class="mt-3">
+              <span class="tech-tag lemon-tag">President's Lister (2023 – Present)</span>
+              <span class="tech-tag">Full-Stack Capstone Lead</span>
+            </div>
+          </div>
+
+          <div class="glass-card education-item">
+            <div class="education-period">Senior High School</div>
+            <h4 class="education-degree">TVL — Information & Communications Technology</h4>
+            <p class="education-school">Bernardo College</p>
+            <p class="education-location"><i class="bi bi-geo-alt-fill"></i> Las Piñas City</p>
+            <div class="mt-2">
+              <span class="tech-tag">Graduated With Honors</span>
+            </div>
+          </div>
+
+          <!-- Academic Reference -->
+          <div class="glass-card p-4 mt-3" style="border-left: 4px solid var(--color-glacier-deep); background: #FFFFFF;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--color-glacier-deep); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 0.4rem;">
+              // Faculty Reference
+            </div>
+            <h5 style="color: var(--color-navy); font-size: 1.15rem; font-weight: 800; margin-bottom: 0.35rem;">Michael Anjelo O. Miguel</h5>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0; line-height: 1.7;">
+              MIT BSIT Program Coordinator, Research and Extension Coordinator, and OJT Coordinator<br/>
+              <strong>Polytechnic University of the Philippines – Biñan Campus</strong>
+            </p>
+          </div>
+        </div>
+
+        <!-- Leadership column -->
+        <div class="col-lg-6 reveal">
+          <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--color-navy); margin-bottom: 1.75rem; font-family: 'JetBrains Mono', monospace; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="bi bi-flag-fill" style="color: var(--color-lemon);"></i> Leadership & Community
+          </h3>
+
+          <div class="glass-card leadership-item">
+            <h4 class="leadership-role">Vice President for Documentation</h4>
+            <div class="leadership-org">Culture and Arts Collective – PUP Biñan</div>
+            <div class="leadership-date"><i class="bi bi-calendar3"></i> Sep 2025 – Aug 2026</div>
+          </div>
+
+          <div class="glass-card leadership-item">
+            <h4 class="leadership-role">Media Specialist</h4>
+            <div class="leadership-org">Institute of Bachelors in Information Technology Studies (IBITS - PUP Biñan)</div>
+            <div class="leadership-date"><i class="bi bi-calendar3"></i> Sep 2025 – Present</div>
+          </div>
+
+          <div class="glass-card leadership-item">
+            <h4 class="leadership-role">Marketing Team Member</h4>
+            <div class="leadership-org">DEVCON Laguna Chapter</div>
+            <div class="leadership-date"><i class="bi bi-calendar3"></i> Jun 2025 – Feb 2026</div>
+          </div>
+
+          <div class="glass-card leadership-item">
+            <h4 class="leadership-role">Head Photographer</h4>
+            <div class="leadership-org">PUP Philharmonic Rondalla</div>
+            <div class="leadership-date"><i class="bi bi-calendar3"></i> Oct 2024 – Oct 2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       CONTACT SECTION
+       ═══════════════════════════════════════════════════════ -->
+  <section id="contact" class="section-padding">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label"><i class="bi bi-envelope-fill"></i> Get in Touch</span>
+        <h2 class="section-title">Let's Connect & <span class="gradient-text">Collaborate</span></h2>
+        <p class="section-subtitle">Actively seeking IT Internship opportunities, full-stack projects, and technical collaborations.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-10 reveal">
+          <div class="glass-card contact-spotlight-card">
+            
+            <div class="row g-4 mb-4">
+              <!-- Email Card -->
+              <div class="col-md-6">
+                <div class="contact-grid-item">
+                  <div class="contact-grid-icon">
+                    <i class="bi bi-envelope-check-fill"></i>
+                  </div>
+                  <div class="contact-label">Official Email</div>
+                  <div class="contact-value" style="word-break: break-all;">
+                    reyes.rayver01@gmail.com
+                  </div>
+                  <p class="contact-subtext">Fastest response for inquiries & technical roles</p>
+                  <div class="mt-auto pt-3">
+                    <a href="mailto:reyes.rayver01@gmail.com" class="btn-lemon" style="padding: 0.6rem 1.4rem; font-size: 0.88rem;">
+                      <i class="bi bi-send-fill"></i> Send Email
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Phone Card -->
+              <div class="col-md-6">
+                <div class="contact-grid-item">
+                  <div class="contact-grid-icon">
+                    <i class="bi bi-telephone-outbound-fill"></i>
+                  </div>
+                  <div class="contact-label">Phone & SMS</div>
+                  <div class="contact-value">
+                    +63 977 340 7439
+                  </div>
+                  <p class="contact-subtext">Direct mobile line & Viber available</p>
+                  <div class="mt-auto pt-3">
+                    <a href="tel:09773407439" class="btn-navy" style="padding: 0.6rem 1.4rem; font-size: 0.88rem;">
+                      <i class="bi bi-telephone-fill"></i> Call / Text
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Location Card -->
+              <div class="col-md-6">
+                <div class="contact-grid-item">
+                  <div class="contact-grid-icon">
+                    <i class="bi bi-geo-alt-fill"></i>
+                  </div>
+                  <div class="contact-label">Current Location</div>
+                  <div class="contact-value">
+                    Biñan City, Laguna
+                  </div>
+                  <p class="contact-subtext">Philippines • Available for On-Site, Hybrid, & Remote positions</p>
+                  <div class="mt-auto pt-3">
+                    <span class="tech-tag lemon-tag" style="font-size: 0.8rem; padding: 0.4rem 0.85rem;">
+                      <i class="bi bi-check-circle-fill"></i> Open to Relocation / NCR Commute
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Professional Networks Card -->
+              <div class="col-md-6">
+                <div class="contact-grid-item">
+                  <div class="contact-grid-icon">
+                    <i class="bi bi-diagram-3-fill"></i>
+                  </div>
+                  <div class="contact-label">Professional Networks</div>
+                  <div class="contact-value">
+                    LinkedIn & GitHub
+                  </div>
+                  <p class="contact-subtext">View technical repositories and connect professionally</p>
+                  <div class="mt-auto pt-3 d-flex gap-2 flex-wrap">
+                    <a href="https://www.linkedin.com/in/rayver-reyes-7469ba39b" target="_blank" rel="noopener" class="btn-outline-glacier" style="padding: 0.55rem 1.1rem; font-size: 0.85rem;">
+                      <i class="bi bi-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/ProfessorRayver/ProfessorRayver" target="_blank" rel="noopener" class="btn-outline-glacier" style="padding: 0.55rem 1.1rem; font-size: 0.85rem;">
+                      <i class="bi bi-github"></i> GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Spotlight Bottom Action Bar -->
+            <div class="p-4 rounded-3 text-center" style="background: var(--color-glacier-light); border: 1.5px solid var(--border-glacier);">
+              <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--color-navy); margin-bottom: 0.35rem;">
+                Looking for an IT Intern or Full-Stack Developer?
+              </h4>
+              <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+                I am ready to bring technical execution, agile collaboration, and proactive problem-solving to your engineering team.
+              </p>
+              <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="mailto:reyes.rayver01@gmail.com" class="btn-lemon">
+                  <i class="bi bi-envelope-fill"></i> Email Rayver Directly
+                </a>
+                <a href="https://www.linkedin.com/in/rayver-reyes-7469ba39b" target="_blank" rel="noopener" class="btn-navy">
+                  <i class="bi bi-linkedin"></i> Connect on LinkedIn
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════════ -->
+  <footer class="footer-custom">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start">
+          <div class="footer-brand">&lt;<span>RSR</span>/&gt; Rayver S. Reyes</div>
+          <p class="footer-text">&copy; 2026 Rayver S. Reyes. Crafted in Glacier Blue, Navy & Lemon.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+          <div class="footer-social justify-content-center justify-content-md-end">
+            <a href="https://github.com/ProfessorRayver/ProfessorRayver" class="footer-social-link" target="_blank" rel="noopener" aria-label="GitHub">
+              <i class="bi bi-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/rayver-reyes-7469ba39b" class="footer-social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="mailto:reyes.rayver01@gmail.com" class="footer-social-link" aria-label="Email">
+              <i class="bi bi-envelope-fill"></i>
+            </a>
+            <a href="tel:09773407439" class="footer-social-link" aria-label="Phone">
+              <i class="bi bi-telephone-fill"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       CERTIFICATE VIEW MODAL
+       ═══════════════════════════════════════════════════════ -->
+  <div class="modal fade" id="certModal" tabindex="-1" aria-labelledby="certModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-cert-dialog">
+      <div class="modal-content modal-cert-content">
+        <div class="modal-header modal-cert-header d-flex justify-content-between align-items-center">
+          <div>
+            <h5 class="modal-title" id="certModalTitle" style="color: var(--color-navy); font-weight: 800; margin: 0;">
+              Certificate Title
+            </h5>
+            <small id="certModalDesc" style="color: var(--text-secondary);"></small>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-cert-body">
+          <img id="certModalImg" src="" alt="Certificate Preview" class="img-fluid" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══ Scripts ═══ -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
