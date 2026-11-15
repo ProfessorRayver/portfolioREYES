@@ -4,52 +4,143 @@
    Theme: Glacier Blue, Navy & Lemon (Light Mode)
    ============================================================ */
 
-// Global function to trigger certificate preview modal
-function openCertModal(imageSrc, title, desc) {
-  const modalEl = document.getElementById('certModal');
-  if (!modalEl) return;
+/* ── CERTIFICATE LIGHTBOX ──────────────────────────────────
+   Opens maximized by default and is navigable as a gallery.    */
+const CertLightbox = (() => {
+  let items = [];        // every certificate card, in document order
+  let index = 0;         // which one is on screen
+  let maximized = true;  // full-viewport by default
 
-  const modalImg = document.getElementById('certModalImg');
-  const modalTitle = document.getElementById('certModalTitle');
-  const modalDesc = document.getElementById('certModalDesc');
-  const modalLink = document.getElementById('certModalOpenNew');
+  const $ = id => document.getElementById(id);
 
-  if (modalImg) {
-    modalImg.src = imageSrc;
-    modalImg.classList.remove('zoomed');
+  function collect() {
+    items = Array.from(document.querySelectorAll('.cert-trigger')).map(el => ({
+      src:   el.getAttribute('data-cert-src'),
+      title: el.getAttribute('data-cert-title') || '',
+      desc:  el.getAttribute('data-cert-desc') || ''
+    }));
   }
-  if (modalTitle) modalTitle.textContent = title;
-  if (modalDesc) modalDesc.textContent = desc || '';
-  if (modalLink) modalLink.href = imageSrc;
 
-  const bsModal = bootstrap.Modal.getOrCreateInstance(modalEl);
-  bsModal.show();
-}
+  // Zoom to 2.5x the fitted size (and never below native resolution) so
+  // low-resolution scans still visibly magnify; the stage then scrolls to pan.
+  const ZOOM_FACTOR = 2.5;
 
-// Toggle full-screen lightbox mode
-function toggleCertFullscreen() {
-  const dialog = document.querySelector('.modal-cert-dialog');
-  const btn = document.getElementById('certFullscreenBtn');
-  if (!dialog) return;
+  function setZoom(on) {
+    const img = $('certModalImg'), btn = $('certZoomBtn'), body = $('certModalBody');
+    if (!img) return;
 
-  dialog.classList.toggle('modal-fullscreen');
-  if (btn) {
-    const isFull = dialog.classList.contains('modal-fullscreen');
-    btn.innerHTML = isFull 
-      ? '<i class="bi bi-fullscreen-exit"></i> Exit Full Screen' 
-      : '<i class="bi bi-arrows-fullscreen"></i> Full Screen';
+    if (on) {
+      const fittedW = img.getBoundingClientRect().width;
+      const target = Math.max(fittedW * ZOOM_FACTOR, img.naturalWidth || 0);
+      img.classList.add('zoomed');
+      img.style.width = target + 'px';
+      img.style.height = 'auto';
+    } else {
+      img.classList.remove('zoomed');
+      img.style.width = '';
+      img.style.height = '';
+    }
+
+    if (btn) btn.innerHTML = on
+      ? '<i class="bi bi-zoom-out"></i> <span>Zoom Out</span>'
+      : '<i class="bi bi-zoom-in"></i> <span>Zoom In</span>';
+
+    if (body) {
+      // centre the zoomed image rather than parking it at the top-left
+      body.scrollLeft = on ? (body.scrollWidth - body.clientWidth) / 2 : 0;
+      body.scrollTop  = on ? (body.scrollHeight - body.clientHeight) / 2 : 0;
+    }
   }
-}
 
-// Toggle zoom in/out on image click
-function toggleCertZoom() {
-  const modalImg = document.getElementById('certModalImg');
-  if (modalImg) {
-    modalImg.classList.toggle('zoomed');
+  function setMaximized(on) {
+    maximized = on;
+    const dialog = document.querySelector('.modal-cert-dialog');
+    const btn = $('certFullscreenBtn');
+    if (dialog) dialog.classList.toggle('cert-windowed', !on);
+    if (btn) btn.innerHTML = on
+      ? '<i class="bi bi-fullscreen-exit"></i> <span>Exit Full Screen</span>'
+      : '<i class="bi bi-arrows-fullscreen"></i> <span>Full Screen</span>';
   }
+
+  // Paint certificate `i` into the already-open lightbox.
+  function render(i) {
+    if (!items.length) return;
+    index = (i + items.length) % items.length;      // wrap around
+    const it = items[index];
+
+    const img = $('certModalImg');
+    if (img) { setZoom(false); img.src = it.src; img.alt = it.title; }
+
+    const t = $('certModalTitle'); if (t) t.textContent = it.title;
+    const d = $('certModalDesc');  if (d) d.textContent = it.desc;
+    const a = $('certModalOpenNew'); if (a) a.href = it.src;
+    const c = $('certCounter'); if (c) c.textContent = `${index + 1} / ${items.length}`;
+
+    const multi = items.length > 1;
+    ['certPrevBtn', 'certNextBtn'].forEach(id => {
+      const b = $(id); if (b) b.style.display = multi ? '' : 'none';
+    });
+  }
+
+  function open(i) {
+    const modalEl = $('certModal');
+    if (!modalEl || typeof bootstrap === 'undefined') return;
+    if (!items.length) collect();
+    setMaximized(true);   // always start maximized, never inherit stale state
+    render(i);
+    bootstrap.Modal.getOrCreateInstance(modalEl).show();
+  }
+
+  function isOpen() {
+    const m = $('certModal');
+    return !!m && m.classList.contains('show');
+  }
+
+  function init() {
+    collect();
+    if (!items.length) return;
+
+    // Open on click / Enter / Space from any card
+    document.querySelectorAll('.cert-trigger').forEach((el, i) => {
+      el.addEventListener('click', () => open(i));
+      el.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(i); }
+      });
+    });
+
+    $('certPrevBtn') && $('certPrevBtn').addEventListener('click', e => { e.stopPropagation(); render(index - 1); });
+    $('certNextBtn') && $('certNextBtn').addEventListener('click', e => { e.stopPropagation(); render(index + 1); });
+    $('certZoomBtn') && $('certZoomBtn').addEventListener('click', () => setZoom(!$('certModalImg').classList.contains('zoomed')));
+    $('certFullscreenBtn') && $('certFullscreenBtn').addEventListener('click', () => setMaximized(!maximized));
+
+    const img = $('certModalImg');
+    img && img.addEventListener('click', () => setZoom(!img.classList.contains('zoomed')));
+
+    document.addEventListener('keydown', e => {
+      if (!isOpen()) return;
+      if (e.key === 'ArrowLeft')  { e.preventDefault(); render(index - 1); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); render(index + 1); }
+      if (e.key === 'f' || e.key === 'F') { e.preventDefault(); setMaximized(!maximized); }
+      if (e.key === 'z' || e.key === 'Z') { e.preventDefault(); setZoom(!$('certModalImg').classList.contains('zoomed')); }
+    });
+
+    const modalEl = $('certModal');
+    modalEl && modalEl.addEventListener('hidden.bs.modal', () => setZoom(false));
+  }
+
+  return { init, open };
+})();
+
+// Back-compat: any leftover inline onclick still works.
+function openCertModal(imageSrc) {
+  CertLightbox.open(0);
+  const img = document.getElementById('certModalImg');
+  if (img && imageSrc) img.src = imageSrc;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  CertLightbox.init();
+
   // ── NAVBAR SCROLL EFFECT ────────────────────────────────
   const navbar = document.getElementById('mainNavbar');
   const navLinks = document.querySelectorAll('.nav-link[data-section]');

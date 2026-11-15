@@ -952,81 +952,181 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
-/* Modal for viewing certificate (Immersive Full-Screen Lightbox) */
-.modal-cert-dialog {
-  max-width: 95vw;
-  width: 95vw;
-  margin: 1.5rem auto;
-  transition: all 0.3s var(--ease-smooth);
-}
+/* ── CERTIFICATE LIGHTBOX (immersive, viewport-locked) ───── */
 
-.modal-cert-dialog.modal-fullscreen {
-  width: 100vw;
+/* Default = maximized. The dialog is exactly the viewport, never taller,
+   so the header and footer can never be pushed off-screen. */
+.modal-cert-dialog {
   max-width: 100vw;
-  height: 100vh;
+  width: 100vw;
+  height: 100%;
   margin: 0;
 }
 
-.modal-cert-dialog.modal-fullscreen .modal-content {
-  height: 100vh;
+.modal-cert-content {
+  height: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #FFFFFF;
+  color: var(--color-navy);
+  border: none;
   border-radius: 0;
 }
 
-.modal-cert-content {
-  background: #FFFFFF;
+/* Windowed (un-maximized) variant */
+.modal-cert-dialog.cert-windowed {
+  width: min(1180px, 94vw);
+  max-width: min(1180px, 94vw);
+  height: auto;
+  margin: 1.5rem auto;
+}
+.modal-cert-dialog.cert-windowed .modal-cert-content {
+  /* definite height (not auto) so the image area can flex and the picture
+     fits instead of overflowing past the rounded frame */
+  height: calc(100vh - 3rem);
+  max-height: calc(100vh - 3rem);
   border: 2px solid var(--color-glacier);
   border-radius: var(--radius-lg);
   box-shadow: 0 25px 70px rgba(12, 27, 72, 0.35);
-  color: var(--color-navy);
-  overflow: hidden;
 }
 
+/* Header / footer are fixed-size; only the image area flexes */
 .modal-cert-header {
-  border-bottom: 1px solid var(--border-light);
-  padding: 1rem 1.75rem;
-  background: #F4F8FD;
-}
-
-.modal-cert-body {
-  padding: 1.5rem;
-  text-align: center;
-  background: #070F26;
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
-  justify-content: center;
-  min-height: 75vh;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  background: #F4F8FD;
+  border-bottom: 1px solid var(--border-light);
+}
+.modal-cert-heading { min-width: 0; }
+.modal-cert-header .modal-title {
+  color: var(--color-navy);
+  font-weight: 800;
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.25;
+}
+.modal-cert-header #certModalDesc {
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+}
+.modal-cert-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.cert-ctl {
+  padding: 0.35rem 0.8rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+.cert-counter {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  padding-right: 0.25rem;
+}
+
+/* Image stage: fills every remaining pixel. min-height:0 is what lets a
+   flex child actually shrink instead of overflowing its parent. */
+.modal-cert-body {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  padding: 0.75rem;
+  background: #070F26;
   overflow: auto;
 }
 
-.modal-cert-dialog.modal-fullscreen .modal-cert-body {
-  min-height: calc(100vh - 130px);
-}
-
+/* margin:auto centres the image AND, unlike align-items:center,
+   keeps the top/left reachable when zoomed past the container. */
 .modal-cert-body img {
-  max-height: 80vh;
+  margin: auto;
+  flex: 0 0 auto;   /* must not shrink, or zoomed images collapse instead of panning */
   max-width: 100%;
+  max-height: 100%;
   width: auto;
+  height: auto;
   object-fit: contain;
-  border-radius: 6px;
+  border-radius: 4px;
   box-shadow: 0 12px 45px rgba(0, 0, 0, 0.7);
   cursor: zoom-in;
-  transition: transform 0.28s var(--ease-smooth);
 }
 
-.modal-cert-dialog.modal-fullscreen .modal-cert-body img {
-  max-height: calc(100vh - 160px);
-}
-
+/* Zoomed = natural resolution; the stage scrolls so you can pan. */
 .modal-cert-body img.zoomed {
+  max-width: none;
   max-height: none;
-  max-width: 150%;
   cursor: zoom-out;
-  transform: scale(1.2);
 }
+
+/* Prev / next */
+.cert-nav {
+  position: sticky;
+  top: 50%;
+  transform: translateY(-50%);
+  flex: 0 0 auto;
+  align-self: flex-start;
+  z-index: 5;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(244, 248, 253, 0.9);
+  color: var(--color-navy);
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--transition-base), opacity var(--transition-base);
+}
+.cert-nav:hover { background: var(--color-lemon); }
+.cert-nav-prev { left: 0.5rem; margin-right: -44px; }
+.cert-nav-next { right: 0.5rem; margin-left: -44px; }
 
 .modal-cert-footer {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 0.5rem 1.25rem;
   background: #F4F8FD;
   border-top: 1px solid var(--border-light);
+}
+.modal-cert-footer small { color: var(--text-muted); font-size: 0.78rem; }
+.modal-cert-footer kbd {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  padding: 0 0.3rem;
+  color: var(--color-navy);
+  font-size: 0.72rem;
+}
+.modal-cert-footer .btn { padding: 0.35rem 0.95rem; font-size: 0.82rem; }
+
+@media (max-width: 767.98px) {
+  .modal-cert-header { padding: 0.6rem 0.85rem; }
+  .modal-cert-header .modal-title { font-size: 0.95rem; }
+  .modal-cert-header #certModalDesc { display: none; }
+  .cert-ctl span { display: none; }
+  .modal-cert-body { padding: 0.4rem; }
+  .modal-cert-footer small { display: none; }
+  .modal-cert-footer { justify-content: flex-end; }
+  .cert-nav { width: 38px; height: 38px; }
+  .cert-nav-prev { margin-right: -38px; }
+  .cert-nav-next { margin-left: -38px; }
 }
 
 /* ── SKILLS SECTION ──────────────────────────────────────── */
