@@ -1018,22 +1018,34 @@
 
 
   <!-- ═══════════════════════════════════════════════════════
-       CERTIFICATE VIEW MODAL
+       CERTIFICATE FULL-SCREEN VIEW MODAL / LIGHTBOX
        ═══════════════════════════════════════════════════════ -->
   <div class="modal fade" id="certModal" tabindex="-1" aria-labelledby="certModalTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-cert-dialog">
       <div class="modal-content modal-cert-content">
-        <div class="modal-header modal-cert-header d-flex justify-content-between align-items-center">
+        <div class="modal-header modal-cert-header d-flex justify-content-between align-items-center flex-wrap gap-2">
           <div>
-            <h5 class="modal-title" id="certModalTitle" style="color: var(--color-navy); font-weight: 800; margin: 0;">
+            <h5 class="modal-title" id="certModalTitle" style="color: var(--color-navy); font-weight: 800; margin: 0; font-size: 1.15rem;">
               Certificate Title
             </h5>
-            <small id="certModalDesc" style="color: var(--text-secondary);"></small>
+            <small id="certModalDesc" style="color: var(--text-secondary); font-size: 0.85rem;"></small>
           </div>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="d-flex align-items-center gap-2">
+            <button type="button" class="btn btn-sm btn-outline-glacier" id="certFullscreenBtn" onclick="toggleCertFullscreen()" title="Toggle Full Screen View" style="padding: 0.35rem 0.85rem; font-size: 0.82rem;">
+              <i class="bi bi-arrows-fullscreen"></i> Full Screen
+            </button>
+            <a id="certModalOpenNew" href="" target="_blank" rel="noopener" class="btn btn-sm btn-lemon" title="Open Full Resolution Image in New Tab" style="padding: 0.35rem 0.85rem; font-size: 0.82rem;">
+              <i class="bi bi-box-arrow-up-right"></i> Open Original
+            </a>
+            <button type="button" class="btn-close ms-2" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
         </div>
         <div class="modal-cert-body">
-          <img id="certModalImg" src="" alt="Certificate Preview" class="img-fluid" />
+          <img id="certModalImg" src="" alt="Certificate Preview" class="img-fluid" onclick="toggleCertZoom()" title="Click image to zoom in / out" />
+        </div>
+        <div class="modal-footer modal-cert-footer d-flex justify-content-between align-items-center py-2 px-3">
+          <small class="text-muted"><i class="bi bi-info-circle"></i> Click certificate to zoom in/out • Click Full Screen for 100% immersive view</small>
+          <button type="button" class="btn btn-sm btn-navy" data-bs-dismiss="modal" style="padding: 0.35rem 0.95rem; font-size: 0.82rem;">Close</button>
         </div>
       </div>
     </div>

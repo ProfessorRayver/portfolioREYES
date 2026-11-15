@@ -12,13 +12,41 @@ function openCertModal(imageSrc, title, desc) {
   const modalImg = document.getElementById('certModalImg');
   const modalTitle = document.getElementById('certModalTitle');
   const modalDesc = document.getElementById('certModalDesc');
+  const modalLink = document.getElementById('certModalOpenNew');
 
-  if (modalImg) modalImg.src = imageSrc;
+  if (modalImg) {
+    modalImg.src = imageSrc;
+    modalImg.classList.remove('zoomed');
+  }
   if (modalTitle) modalTitle.textContent = title;
   if (modalDesc) modalDesc.textContent = desc || '';
+  if (modalLink) modalLink.href = imageSrc;
 
-  const bsModal = new bootstrap.Modal(modalEl);
+  const bsModal = bootstrap.Modal.getOrCreateInstance(modalEl);
   bsModal.show();
+}
+
+// Toggle full-screen lightbox mode
+function toggleCertFullscreen() {
+  const dialog = document.querySelector('.modal-cert-dialog');
+  const btn = document.getElementById('certFullscreenBtn');
+  if (!dialog) return;
+
+  dialog.classList.toggle('modal-fullscreen');
+  if (btn) {
+    const isFull = dialog.classList.contains('modal-fullscreen');
+    btn.innerHTML = isFull 
+      ? '<i class="bi bi-fullscreen-exit"></i> Exit Full Screen' 
+      : '<i class="bi bi-arrows-fullscreen"></i> Full Screen';
+  }
+}
+
+// Toggle zoom in/out on image click
+function toggleCertZoom() {
+  const modalImg = document.getElementById('certModalImg');
+  if (modalImg) {
+    modalImg.classList.toggle('zoomed');
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
