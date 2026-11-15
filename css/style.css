@@ -616,21 +616,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-stat-box {
-  padding: 0.5rem;
+  padding: 0.4rem 0.3rem;
+  flex: 1;
 }
 
 .hero-stat-number {
-  font-size: 1.45rem;
+  font-size: 1.22rem;
   font-weight: 900;
   color: var(--color-navy);
+  margin-bottom: 0.25rem;
+  line-height: 1.15;
 }
 
 .hero-stat-label {
-  font-size: 0.72rem;
-  color: var(--text-muted);
+  font-size: 0.65rem;
+  color: var(--color-navy-muted);
   font-family: 'JetBrains Mono', monospace;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
+  line-height: 1.35;
 }
 
 .hero-scroll-indicator {
