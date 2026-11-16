@@ -1641,3 +1641,269 @@ h1, h2, h3, h4, h5, h6 {
     white-space: nowrap;
   }
 }
+
+/* Hero name: one bright-blue treatment, without the yellow underline. */
+.hero-name,
+.hero-name .highlight {
+  color: #4784D4;
+}
+
+.hero-name .highlight::after {
+  display: none;
+}
+
+/* Mobile layout refinement */
+@media (max-width: 767.98px) {
+  html {
+    scroll-padding-top: 72px;
+  }
+
+  body {
+    line-height: 1.65;
+  }
+
+  .container {
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+  }
+
+  .navbar-custom,
+  .navbar-custom.scrolled {
+    padding: 0.65rem 0;
+  }
+
+  .navbar-brand-custom {
+    font-size: 1.15rem;
+  }
+
+  .navbar-toggler-custom {
+    padding: 0.35rem 0.55rem;
+  }
+
+  .navbar-custom .navbar-collapse {
+    max-height: calc(100vh - 82px);
+    overflow-y: auto;
+    margin-top: 0.65rem;
+    padding: 0.75rem;
+  }
+
+  .navbar-custom .navbar-nav {
+    align-items: stretch !important;
+  }
+
+  .navbar-custom .nav-link {
+    padding: 0.72rem 0.85rem !important;
+    border-radius: 8px;
+  }
+
+  .navbar-custom .nav-link:hover,
+  .navbar-custom .nav-link.active {
+    background: var(--color-glacier-light);
+  }
+
+  .navbar-custom .nav-link::after {
+    display: none;
+  }
+
+  .navbar-custom .btn-lemon {
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.25rem;
+  }
+
+  #hero {
+    min-height: auto;
+    padding-top: 7.25rem;
+    padding-bottom: 3.5rem;
+    overflow: hidden;
+  }
+
+  .hero-bg-photo {
+    background-position: 62% center !important;
+    opacity: 0.18 !important;
+  }
+
+  .hero-badge {
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    padding: 0.65rem 0.8rem;
+    font-size: 0.74rem;
+    line-height: 1.45;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .hero-name {
+    margin: 1.4rem auto 0.9rem;
+    font-size: clamp(2.25rem, 11vw, 3.2rem);
+    line-height: 1.05;
+    letter-spacing: -1.8px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-title {
+    min-height: 3.25rem;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .hero-description,
+  .hero-description.text-justified {
+    max-width: 100%;
+    font-size: 0.96rem;
+    line-height: 1.75;
+    text-align: left;
+    hyphens: none;
+  }
+
+  .hero-cta {
+    width: 100%;
+    gap: 0.7rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-cta a {
+    width: 100%;
+    min-height: 50px;
+  }
+
+  .hero-tags {
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .hero-tag {
+    width: 100%;
+    padding: 0.55rem 0.75rem;
+    text-align: left;
+  }
+
+  .hero-profile-card {
+    padding: 1.75rem 1rem;
+    border-width: 1px;
+  }
+
+  .hero-profile-card .mt-4.pt-3 {
+    display: grid !important;
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .hero-profile-card .mt-4.pt-3 > div[style*="border-right"] {
+    display: none;
+  }
+
+  .hero-stat-box,
+  .hero-stat-box[style] {
+    width: 100%;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .hero-stat-box:last-child {
+    border-bottom: 0;
+  }
+
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 1.2px;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 8.5vw, 2.35rem);
+    line-height: 1.15;
+  }
+
+  .section-subtitle {
+    font-size: 0.96rem;
+  }
+
+  .about-card-wrap,
+  .experience-card,
+  .education-card,
+  .contact-card {
+    padding: 1.4rem 1.1rem;
+  }
+
+  .about-text p,
+  .experience-list li,
+  .text-justified {
+    text-align: left;
+    hyphens: none;
+  }
+
+  .about-highlights {
+    gap: 0.85rem;
+  }
+
+  .about-highlight-item {
+    padding: 1.25rem 1rem;
+  }
+
+  .skills-grid {
+    gap: 0.55rem;
+  }
+
+  .skill-badge {
+    flex: 1 1 calc(50% - 0.55rem);
+    min-width: 0;
+    padding: 0.65rem 0.7rem;
+    font-size: 0.78rem;
+  }
+
+  .cert-thumb-wrap {
+    height: 175px;
+  }
+
+  .cert-body {
+    padding: 1.15rem;
+  }
+
+  .achievement-timeline {
+    padding-left: 1rem;
+  }
+
+  .achievement-item {
+    margin-left: 0.25rem;
+    padding: 1.15rem 1rem;
+  }
+
+  .gallery-item {
+    aspect-ratio: 4 / 3;
+  }
+
+  .footer-custom {
+    padding: 2.5rem 0;
+    text-align: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+    margin-top: 1.25rem;
+  }
+}
+
+@media (max-width: 399.98px) {
+  .hero-name {
+    font-size: 2.15rem;
+    letter-spacing: -1.2px;
+  }
+
+  .hero-badge {
+    font-size: 0.68rem;
+  }
+
+  .skill-badge {
+    flex-basis: 100%;
+  }
+
+  .tech-tag {
+    font-size: 0.68rem;
+  }
+}
